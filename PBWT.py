@@ -56,9 +56,7 @@ class PBWT:
         return matches
 
 
-# =========================
-# MAIN
-# =========================
+
 if __name__ == "__main__":
 
     if len(sys.argv) < 3:
@@ -68,7 +66,6 @@ if __name__ == "__main__":
     file_path = sys.argv[1]
     min_L = int(sys.argv[2])
 
-    print("Loading haplotype file...")
 
     # Load CSV or Excel
     if file_path.endswith(".csv"):
@@ -78,7 +75,7 @@ if __name__ == "__main__":
     else:
         raise ValueError("File must be .csv or .xlsx")
 
-    # Drop haplotype ID column
+    # Drop the firsrt haplotype ID column
     matrix = df.iloc[:, 1:].values
 
     print(f"Haplotypes: {matrix.shape[0]}")
@@ -92,9 +89,7 @@ if __name__ == "__main__":
     print("Searching for matches...")
     results = pbwt.report_long_matches(min_L)
 
-    # =========================
-# SAVE RESULTS TO CSV
-# =========================
+# generating the output in csv file 
     if results:
         out_df = pd.DataFrame(
             results,
@@ -107,8 +102,6 @@ if __name__ == "__main__":
 
         print(f"\nResults saved to: {output_file}")
 
-
-    print("\n===== RESULTS =====")
     if not results:
         print("No matches found.")
     else:
@@ -118,3 +111,4 @@ if __name__ == "__main__":
                 f"Haplotype {h1} ↔ {h2} | "
                 f"Start: {start}, End: {end}, Length: {end - start}"
             )
+
