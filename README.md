@@ -1,16 +1,17 @@
 # Positional-Burrows-Wheeler-Transform-PBWT-Haplotype Matching
 
-This repository provides **Python and C++ implementations** of the  
-**Positional Burrows–Wheeler Transform (PBWT)** algorithm for detecting
+This repository provides **Python and C++ implementations** of the **Positional Burrows–Wheeler Transform (PBWT)** algorithm for detecting
 long shared haplotype segments.
 
-The implementation follows the original algorithm introduced by  
-**Richard Durbin** and is intended for:
+**Haplotypes** are groups of genes or genetic markers inherited together from a single parent. Studying haplotypes helps in understanding **genetic diversity**, tracing ancestry, and identifying disease-associated regions.
 
+The **Positional Burrows–Wheeler Transform (PBWT)** is an algorithm that efficiently finds **long shared haplotype segments** across many individuals. It works by **sorting haplotypes at each site** and tracking divergences to detect matching sequences quickly, which is faster than comparing all pairs directly.
+
+The implementation follows the original PBWT algorithm and is intended for:
+
+- Identifying shared haplotypes in user data
 - Learning and understanding PBWT
-- Algorithmic bioinformatics demonstrations
-- Academic projects and portfolios
-- Testing on small to medium haplotype datasets
+- Testing on small to large haplotype datasets
 
 ---
 
@@ -26,11 +27,11 @@ cd PBWT-a-fast-Haplotypes-Matching-Algorithm
 ## Repository Structure
 
 ```text
-PBWT.py                  # Python implementation of PBWT
-PBWT.cpp                 # C++ implementation of PBWT
+PBWT.py                  
+PBWT.cpp             
 test_data/
- └── example_haplotypes.csv # Example haplotype dataset
-README.md                # Project documentation
+ └── example_haplotypes.csv 
+README.md               
 ```
 
 ## Input File Format
@@ -99,10 +100,10 @@ hap1,hap2,start,end,length
 | p, q    | Divergence trackers for allele groups |
 
 
-## Contributor / Author / Creator
+## Contributor / Author 
 
 **Name:** Rana Sheraz Ahmad  
-**Role:** Implementator  
+**Role:** Implementater  
 **GitHub:** [SherazAhmadd](https://github.com/SherazAhmadd)
 
 
